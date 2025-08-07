@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="login-container">
+    <h2>Login</h2>
+    <form method="POST">
+        <label for="usertype">I am a:</label>
+        <select name="usertype" id="usertype" required>
+            <option value="">Select User Type</option>
+            <option value="student">Student</option>
+            <option value="professional">Professional</option>
+        </select>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+
+        <button type="submit">Login</button>
+    </form>
+</div>
+{% endblock %}

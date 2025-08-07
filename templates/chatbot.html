@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="chat-container">
+    <h2>🧠 Mira - Your Companion</h2>
+    <div class="chat-box" id="chat-box">
+        {% for message in messages %}
+            <div class="message {{ message.sender }}">
+                <strong>{{ message.sender }}:</strong> {{ message.text }}
+            </div>
+        {% endfor %}
+    </div>
+
+    <form action="{{ url_for('chatbot') }}" method="post" id="chat-form">
+        <input type="text" name="user_input" id="user-input" placeholder="Type a message or choose an emoji..." required>
+        <button type="submit">Send</button>
+    </form>
+
+    <!-- Emoji Buttons -->
+    <div class="emoji-bar">
+        <button type="button" onclick="addEmoji('😊')">😊</button>
+        <button type="button" onclick="addEmoji('😢')">😢</button>
+        <button type="button" onclick="addEmoji('❤')">❤</button>
+        <button type="button" onclick="addEmoji('🍎')">🍎</button>
+        <button type="button" onclick="addEmoji('🍌')">🍌</button>
+        <button type="button" onclick="addEmoji('🍇')">🍇</button>
+        <button type="button" onclick="addEmoji('🐶')">🐶</button>
+        <button type="button" onclick="addEmoji('🐱')">🐱</button>
+        <button type="button" onclick="addEmoji('🐘')">🐘</button>
+        <button type="button" onclick="addEmoji('✍')">✍</button>
+        <button type="button" onclick="addEmoji('👍')">👍</button>
+        <button type="button" onclick="addEmoji('😎')">😎</button>
+        <button type="button" onclick="addEmoji('😴')">😴</button>
+        <button type="button" onclick="addEmoji('🌈')">🌈</button>
+        <button type="button" onclick="addEmoji('🚀')">🚀</button>
+    </div>
+</div>
+
+<script>
+    function addEmoji(emoji) {
+        const input = document.getElementById('user-input');
+        input.value += emoji;
+        input.focus();
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>🧠 Guess the Word!</h1>
+
+    {% if message %}
+        <p class="message">{{ message }}</p>
+    {% endif %}
+
+    <div class="image-container">
+        <img src="{{ url_for('static', filename='images/' + image_filename) }}" alt="Guess the image" width="250">
+    </div>
+
+    <p><strong>Jumbled Word:</strong> {{ jumbled_word }}</p>
+
+    <form method="post">
+        <input type="text" name="user_input" placeholder="Your guess" required>
+        <input type="hidden" name="correct_word" value="{{ correct_word }}">
+        <input type="hidden" name="image_filename" value="{{ image_filename }}">
+        <input type="hidden" name="jumbled_word" value="{{ jumbled_word }}">
+        <button type="submit">Submit</button>
+    </form>
+
+    <form method="get">
+        <button type="submit">Try Another</button>
+    </form>
+</div>
+{% endblock %}
