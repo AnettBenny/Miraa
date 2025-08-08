@@ -8,6 +8,10 @@ Mira is a fun and interactive Flask web application that works as:
 
 ---
 
+**Live Deployment:** [Click here to view the live app on Render](https://miraa-rypf.onrender.com)
+  
+---
+
 ## Features
 - **Emoji Chatbot** – Predefined emoji responses for a friendly, human-like experience.
 - **Profile Page** – Displays user info like name, role, email, and progress.
